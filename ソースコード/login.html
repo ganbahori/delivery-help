@@ -1,0 +1,25 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <!-- ツールバーの文言を変更 -->
+        <div class="center">ログインしよう！</div>
+    </ons-toolbar>
+
+    <div style="text-align: center">
+    <!-- タイトルの文言を変更 -->
+        <h1>ログイン</h1>
+        <p>
+        <!-- ユーザー名とパスワードを入力するテキストボックスを用意 -->
+            メールアドレス<br/>
+            <p><ons-input id="mailAddress" modifier="underbar" placeholder="abcd@gmail.com" float></ons-input></p>
+            パスワード<br/>
+            <p><ons-input type="password"id="password" modifier="underbar" placeholder="英大小文字８文字以上" float></ons-input></p>
+        </p>
+    <!-- 会員登録するボタンが押されたらloginメソッドを呼び出す -->
+        <ons-button onclick="login()">ログイン</ons-button>
+    </div>
+</ons-page>

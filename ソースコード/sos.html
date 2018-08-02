@@ -1,0 +1,20 @@
+<ons-navigator>
+ <ons-page>
+     <ons-toolbar>
+         <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+         </div>
+         <!-- ツールバーの文言を変更 -->
+         <div class="center">SOS</div>
+     </ons-toolbar>
+
+     <div style="text-align: center">
+         <!-- タイトルを入力 -->
+         <h3>SOS投稿内容</h3>
+        <textarea id="sos" style="width:60%; font-size:0.8em;" placeholder='今、娘が迷子になっていて、一緒に探してくれる人を探しています。'></textarea><br>
+        <ons-button onclick="sosTxt()">投稿</ons-button>
+    </div>
+ </ons-page>
+</ons-navigator>

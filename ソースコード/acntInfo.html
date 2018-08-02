@@ -1,0 +1,54 @@
+<ons-navigator>
+ <ons-page>
+     <ons-toolbar>
+         <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+         </div>
+         <!-- ツールバーの文言を変更 -->
+         <div class="center">データ保存</div>
+     </ons-toolbar>
+
+     <div style="text-align: center">
+       <ons-button onclick="fn.load('page7.html')">編集</ons-button>
+        <!-- タイトルの文言を変更 -->
+       <h1>会員情報</h1>
+       <!-- 名前 -->
+        <h2>苗字</h2>
+        <p id="firstName" />
+        <h2>名前</h2>
+        <p id="lastName" />
+       <!-- 年齢 -->
+        <h2>年齢</h2>
+        <p id="old" />
+       <!-- 性別 -->
+        <h2>性別</h2>
+        <p id="sex" />
+       <!-- メールアドレス -->
+        <h2>メールアドレス</h2>
+        <p id="userName" />
+       <!-- 電話番号 -->
+        <h2>電話番号</h2>
+        <p id="phoneNumber" />
+      <!-- objectId -->
+       <h2>オブジェクトID</h2>
+       <p id="objectId">
+     </div>
+ </ons-page>
+ <script>
+    var currentUser = ncmb.User.getCurrentUser();
+    if (currentUser) {
+      objectId.innerHTML=currentUser.get("objectId");
+      firstName.innerHTML=currentUser.get("firstName");
+      lastName.innerHTML=currentUser.get("lastName");
+      old.innerHTML=currentUser.get("old");
+      sex.innerHTML=currentUser.get("sex");
+      userName.innerHTML=currentUser.get("userName");
+      phoneNumber.innerHTML=currentUser.get("phoneNumber");
+    } else {
+      console.log("未ログインまたは取得に失敗");
+    }
+</script>
+</ons-navigator>
+

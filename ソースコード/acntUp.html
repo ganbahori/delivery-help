@@ -1,0 +1,31 @@
+ <ons-navigator>
+  <ons-page>
+      <ons-toolbar>
+          <div class="left">
+              <ons-toolbar-button onclick="fn.open()">
+                  <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+              </ons-toolbar-button>
+          </div>
+          <!-- ツールバーの文言を変更 -->
+          <div class="center">データ編集</div>
+      </ons-toolbar>
+      <div style="text-align: center">
+        <p>会員情報</p>
+        <h3>名前</h3>
+            <p><ons-input id="firstName" modifier="underbar" placeholder="苗字" float></ons-input></p>
+            <p><ons-input id="lastName" modifier="underbar" placeholder="名" float></ons-input></p>
+          <h3>年齢</h3>
+            <p><ons-input id="old" modifier="underbar" placeholder="年齢" float></ons-input></p>
+          <h3>性別</h3>  
+            <ons-radio name="radio" input-id="radio-1" value="男性" checked></ons-radio>
+            <label for="radio1" class="center">男性　</label>
+            <ons-radio name="radio" input-id="radio-2" value="女性"></ons-radio>
+            <label for="radio2" class="center">女性</label><br/>
+          <h3>メールアドレス</h3>
+            <p><ons-input id="mailAddress" modifier="underbar" placeholder="abcd@gmail.com" float></ons-input></p>
+          <h3>電話番号
+            <p><ons-input id="phoneNumber" modifier="underbar" placeholder="08012348765" float></ons-input></p>
+        <ons-button onclick="updateTxt()">更新</ons-button>
+      </div>
+  </ons-page>
+ </ons-navigator>
