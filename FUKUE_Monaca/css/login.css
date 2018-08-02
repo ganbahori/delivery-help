@@ -1,0 +1,36 @@
+/* This is a CSS file */
+body{
+  background-color: #FF8EC7;
+}
+#icon{
+  display: block;
+  width: 130px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+input{
+  display: block;
+  font-size: 16px;
+  margin: 0 auto; 
+  width:200px
+}
+
+#login-btn{
+  background-color: #90FA77;
+  margin-top:130px;
+  width: 150px;
+  border-radius: 20px; 
+  font-size: 13px;
+  padding: 10px;
+}
+
+button{
+  background-color: orange;
+  margin-top:20px; 
+  margin-left:108px; 
+  width: 150px;
+  border-radius: 20px;
+  font-size: 13px;
+  padding: 10px;
+}
