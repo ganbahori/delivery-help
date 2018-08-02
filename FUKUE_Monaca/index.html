@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/otasuke.css">
+  <link rel="stylesheet" href="css/hasshin.css">
+
+  <script>
+    ons.platform.select('ios');
+    ons.ready(function() {
+      console.log("Onsen UI is ready!");
+    });
+
+    document.addEventListener('show', function(event) {
+      var page = event.target;
+      var titleElement = document.querySelector('#toolbar-title');
+
+      if (page.matches('#first-page')) {
+        titleElement.innerHTML = 'マップ';
+      } else if (page.matches('#second-page')) {
+        titleElement.innerHTML = 'タイムライン';
+      } else if(page.matches('#third-page')){
+        titleElement.innerHTML = 'お助けリスト'
+      } else if(page.matches('#fourth-page')){
+        titleElement.innerHTML = '設定'
+      }
+    });
+  </script>
+</head>
+<body>
+  <ons-page>
+    <ons-toolbar>
+      <div class="center" id="toolbar-title"></div>
+    </ons-toolbar>
+    <ons-tabbar position="auto">
+      <ons-tab id="tab1"page="tab1.html" active>
+        <img src="img/map.png" width="30px" class="tab-icon">
+      </ons-tab>
+      <ons-tab id="tab2" page="tab2.html">
+        <img src="img/time.png" width="30px" class="tab-icon">
+      </ons-tab>
+      <ons-tab id="tab3" page="tab3.html">
+        <img src="img/otasuke.png" width="30px" class="tab-icon">
+      </ons-tab>
+      <ons-tab id="tab4" page="tab4.html">
+        <img src="img/edit.png" width="30px" class="tab-icon">
+      </ons-tab>
+    </ons-tabbar>
+  </ons-page>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* This is a CSS file */
+#fourth-page textarea{
+  margin-top: 50px;
+  width: 290px;
+  height: 290px;
+}
+
+#fourth-page #sub-btn{
+  display: block;
+  background-color: orange;
+  font-size: 20px;
+  padding: 10px 30px; 
+  margin: 0 auto;
+  margin-top:80px;
+}
