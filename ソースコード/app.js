@@ -94,7 +94,7 @@ function login(){
     .then(function(data){
       // ログイン後処理
       alert('成功');
-      fn.load('page7.html');
+      //fn.load('page4.html');
     })
     .catch(function(err){
       // エラー処理
@@ -168,7 +168,7 @@ function CurrentPoint(){
 //mobile backendから位置情報を検索するメソッド
 function search(current){
     //位置情報を検索するクラスのNCMB.Objectを作成する
-    var SpotClass = NCMB.Object.extend("Spot");
+    var SpotClass = NCMB.Object.extend("TimeLine");
 
     //NCMB.Queryを作成
     var query = new NCMB.Query(SpotClass);
@@ -211,13 +211,13 @@ function search(current){
                 //console.log(j);
                 console.log(users[j]);  
                 if(users[j]==point.get("user_id")){
-                  markToMap(point.get("name"), myLatlng, map);
-                  markToMap("nowpoint", new google.maps.LatLng(current.geopoint.latitude,current.geopoint.longitude), map);
+                  markToMap(point.get("firstName") + point.get("lastName"), myLatlng, map);
                   var distance = google.maps.geometry.spherical.computeDistanceBetween(nowpoint, myLatlng);
                 }
                 //alert("nowpointから" + point.get('name') + "までの距離は" + Math.round(distance) + "mです。");
               }
           }
+          markToMap(currentUser.get("firstName")+currentUser.get("lastName"), new google.maps.LatLng(current.geopoint.latitude,current.geopoint.longitude), map);
           
         },
         error: function(error) {
@@ -385,20 +385,38 @@ function sosGo(ele){
   var currentUser = ncmb.User.getCurrentUser();
   var go = ncmb.DataStore("Go");
   go = new go();
+  var timeline = ncmb.DataStore("TimeLine");
+  var PleaseUserId;
 
-  go.set('pleaseUser', ele.id)
-  .set('helpUserId', currentUser.get('objectId'))
-  .set('helpUserName', currentUser.get('firstName') + " " +currentUser.get('lastName'))
-  .set('flg', false)
-  .save()
-  .then(function(Object){
-        // 保存後の処理
-          alert('保存成功');
-        })
-        .catch(function(err){
-        // エラー処理
-          alert('保存失敗' + err);
-        });
+  timeline.equalTo("objectId",ele.id)
+    .fetchAll()
+    .then(function(results){
+      for (var i = 0; i < results.length; i++) {
+        var object = results[i];
+        console.log(object.get("user_id"));
+        PleaseUserId = object.get("user_id");
+      }
+      console.log(PleaseUserId);
+      go.set('TimeLineObjectId', ele.id)
+      .set('pleaseUser',PleaseUserId )
+      .set('helpUserId', currentUser.get('objectId'))
+      .set('helpUserName', currentUser.get('firstName') + " " +currentUser.get('lastName'))
+      .set('flg', false)
+      .save()
+      .then(function(Object){
+      // 保存後の処理
+        alert('保存成功');
+      })
+      .catch(function(err){
+      // エラー処理
+        alert('保存失敗' + err);
+      });
+
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+  
 }
 
 function sosEnt(ele){
@@ -428,20 +446,6 @@ function sosDel(ele){
   .then(function(result){
     alert('成功');
     fn.load('page9.html');
-  })
-  .catch(function(err){
-    alert('失敗' + err);
-  });
-}
-
-function sosEnd(ele){
-  var TimeLine = ncmb.DataStore("TimeLine");
-  var item = new TimeLine();
-  item.set("objectId", ele.id); // objectIdを指定
-  item.delete()
-  .then(function(result){
-    alert('成功');
-    fn.load('page11.html');
   })
   .catch(function(err){
     alert('失敗' + err);
