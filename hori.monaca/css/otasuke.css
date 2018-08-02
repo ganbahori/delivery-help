@@ -1,0 +1,38 @@
+
+.help-list{
+  position: absolute;
+  width: 330px;
+  height: 120px;
+  top: 30px;
+  left: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.help-list img{
+  position: relative;
+  width: 30px;
+  top:40px;
+  left: 20px;
+}
+
+.help-list p{
+  position: relative;
+  font-size: 14px;
+  top:-20px;
+  left: 120px;
+}
+
+.help-list ons-button{
+  position: relative;
+  top:-80px;
+  left: 260px;
+  color:white;
+  font-weight: bold;
+  background-color: #58ACFA;
+  border-radius: 3px;
+  padding: 5px 16px;
+  
+
+}
+

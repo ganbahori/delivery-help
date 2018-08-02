@@ -1,0 +1,79 @@
+.waku1{
+    border: solid thin #808080;
+    width:260px;
+    height:120px;
+    margin-left:60px;
+    margin-top:20px;
+    border-radius: 10px 10px 0px 0px;
+    background-color:#FFFFFF;
+     box-shadow:3px 3px;
+}
+.waku2{
+    
+    width:35px;
+    height:35px;
+    border-radius: 50px;
+    margin-left:10px;
+    margin-top:5px;
+    float: left;
+    overflow: hidden;
+    
+}
+.text1{
+    margin-top:5px;
+    margin-left:55px;
+    font-size: 13px;
+    color: #5D6060;
+    font-weight:bold;
+    
+}
+.requirement{
+    
+    width:235px;
+    height:70px;
+    margin-top:10px;
+    margin-left:15px;
+}
+.requirementContent{
+    font-size: 13px;
+}
+.bar{
+    border: solid thin #808080;
+    width:260px;
+    height:35px;
+    border-radius:0px 0px 10px 10px;
+    margin-left:60px;
+    margin-top:0px;
+    background: radial-gradient(#FFFFFF, #E6E6E6); 
+    box-shadow:3px 3px;
+    
+    
+    
+    
+}
+.time{
+    font-size:11px;
+    margin-left:55px;
+    color:#808080;
+    
+}
+.delete{
+    margin-top:6px;
+    margin-left:20px;
+    width:20px;
+    height:20px;
+    
+}
+.complete{
+    margin-top:6px;
+    margin-left:10px;
+    width:20px;
+    height:20px;
+}
+.help{
+    margin-top:6px;
+    margin-left:20px;
+    width:20px;
+    height:20px;
+}
+

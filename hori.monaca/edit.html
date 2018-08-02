@@ -1,0 +1,68 @@
+
+    <ons-page id="fourth-page">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/edit.css">
+    <script>
+        function imgPreView(event){
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  var preview = document.getElementById("preview");
+  var previewImage = document.getElementById("previewImage");
+   
+  if(previewImage != null)
+    preview.removeChild(previewImage);
+ 
+  reader.onload = function(event) {
+     var img = document.createElement("img");
+     img.setAttribute("src", reader.result);
+     img.setAttribute("id", "previewImage");
+     preview.appendChild(img);
+     
+  };
+ 
+  reader.readAsDataURL(file);
+}
+    </script>
+<div id="preview" class="iconedit img">
+    <div class="black">
+        <div class="fileform1">
+            <label for="file_photo">
+            <img src ="../www/img/camera7.png">
+            <input type="file" onChange="imgPreView(event)">
+            </label>
+        </div> 
+    </div>    
+</div>
+<div class="form1">
+    <input type="text" name="姓" value="" class="formsize" placeholder="姓"/>
+</div>
+<div class="form1">
+    <input type="text" name="名" value="" class="formsize"placeholder="名"/>
+</div>
+<div class="form1">
+    <input type="text" name="年齢" value="" class="formsize"placeholder="年齢"/>
+</div>
+<div class="sample">
+    <input type="radio" name="s2" id="on" value="1" checked="">
+    <label for="on" class="switch-on">男性</label>
+    <input type="radio" name="s2" id="off" value="0">
+    <label for="off" class="switch-off">女性</label>
+</div>
+<br>
+<br>
+
+
+<div class="form1">
+    <input type="text" name="メールアドレス" value="" class="formsize"placeholder="メールアドレス"/>
+</div>
+<div class="form1">
+    <input type="password" name="パスワード" value="" class="formsize"placeholder="パスワード"/>
+</div>
+<div class="form1">
+    <input type="tel" name="電話番号" value="" class="formsize"placeholder="電話番号"/>
+</div>
+
+    <ons-button class="button1">保存
+    </ons-button>  
+
+    </ons-page>

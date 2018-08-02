@@ -1,0 +1,15 @@
+/* This is a CSS file */
+#transmissions textarea{
+  margin-top: 50px;
+  width: 290px;
+  height: 290px;
+}
+
+#transmissions #sub-btn{
+  display: block;
+  background-color: orange;
+  font-size: 20px;
+  padding: 10px 30px; 
+  margin-top:40px;
+  margin-left:135px;
+

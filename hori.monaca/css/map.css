@@ -1,0 +1,9 @@
+#first-page{
+  background-color: black;
+}
+
+#first-page img{
+  position: absolute;
+  top:460px;
+  left: 260px;
+}
