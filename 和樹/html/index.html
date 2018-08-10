@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+<script src="components/loader.js"></script>
+<script src="js/app.js"></script>
+
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script>
+    ons.ready(function() {
+      console.log("Onsen UI is ready!");
+    });
+
+    window.fn = {};
+    window.fn.load = function(page) {
+      var content = document.getElementById('content');
+      content
+        .load(page)
+    };
+  </script>
+</head>
+<body>
+  <div class="title">
+  ウォームヘルパー
+  </div>
+  <p><input type="text" id="mailAddress" placeholder="メールアドレス"></p>
+  <p><input type="password" id="password"  placeholder="パスワード"></p>
+  <button id="login-btn" onclick="login()">ログイン</button>
+  <button onclick="location.href = 'signup.html';"><span>新規登録</span></button>
+</body>
+</html>

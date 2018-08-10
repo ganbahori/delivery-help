@@ -1,0 +1,76 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/app.js"></script>
+    <script>
+        function imgPreView(event){
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  var preview = document.getElementById("preview");
+  var previewImage = document.getElementById("previewImage");
+   
+  if(previewImage != null)
+    preview.removeChild(previewImage);
+ 
+  reader.onload = function(event) {
+     var img = document.createElement("img");
+     img.setAttribute("src", reader.result);
+     img.setAttribute("id", "previewImage");
+     preview.appendChild(img);
+     
+  };
+ 
+  reader.readAsDataURL(file);
+}
+    </script>   
+<div class="back">    
+    <div class="sinki">新規登録</div>
+    <div id="preview" class="iconedit img">
+        <div class="black">
+            <div class="fileform1">
+                <label for="file_photo">
+                <img src ="../www/img/camera7.png">
+                <input type="file" onChange="imgPreView(event)">
+                </label>
+            </div> 
+        </div>    
+    </div>
+    <div class="form1">
+        <input  id="firstName" type="text" name="姓"class="formsize" placeholder="姓"/>
+    </div>
+    <div class="form1">
+        <input id="lastName" type="text" name="名" value="" class="formsize"placeholder="名"/>
+    </div>
+    <div class="form1">
+        <input type="text" id="old" name="年齢" value="" class="formsize"placeholder="年齢"/>
+    </div>
+    <div class="sample">
+        <input type="radio" name="radio" value="男性" id="on" checked="">
+        <label for="on" class="switch-on">男性</label>
+        <input type="radio" name="radio"value="女性" id="off" >
+        <label for="off" class="switch-off">女性</label>
+    </div>
+    <br>
+    <br>
+    
+    
+    <div class="form1">
+        <input id="mailAddress" type="text" name="メールアドレス" class="formsize"placeholder="メールアドレス"/>
+    </div>
+    <div class="form1">
+        <input id="password" type="password" name="パスワード" value="" class="formsize"placeholder="パスワード"/>
+    </div>
+    <div class="form1">
+        <input id="phoneNumber" type="tel" name="電話番号" value="" class="formsize"placeholder="電話番号"/>
+    </div>
+    
+        <ons-button class="button1" onclick="register()">新規登録</ons-button>  
+        </ons-page>
+</div>        

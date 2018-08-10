@@ -1,0 +1,41 @@
+<ons-page id="second-page">
+  <script>
+    var currentUser = ncmb.User.getCurrentUser();
+    function evaluation(){
+      location.href = 'evaluation.html';
+    } 
+    document.getElementById('currentUser').innerHTML = currentUser.get('firstName')+currentUser.get('lastName');
+  </script>
+  <link rel="stylesheet" href="css/timeline.css">
+  <div class="waku1">
+    <div class="waku2"><img src="img/himura.jpeg"></div> <!-- 投稿者写真 -->
+    <div class="text1"><p id="currentUser"></div> <!-- カレントユーザー名 -->
+    <div class="time">10分前</div> <!-- 投稿経過時間 -->
+    <!-- Memo -->
+    <div class="requirement">
+        <div class="requirementContent">今子供がいないので誰か探すのを手伝ってください</div>
+    </div>
+  </div>
+  <div class="bar">
+    <input type=image onclick="" src="img/delete.png" class="help">
+    <input type=image onclick="evaluation()" src="img/complete.png" class="help">
+  </div>
+  <br>
+
+  <hr>
+
+  <div class="waku1">
+    <div class="waku2"><img src="img/himura.jpeg"></div> <!-- 投稿者写真 -->
+    <div class="text1">宮崎 和樹</div> <!-- 投稿者名 -->
+    <div class="time">10分前</div> <!-- 経過時間 -->
+    <!-- Memo -->
+    <div class="requirement">
+        <div class="requirementContent">今子供がいないので誰か探すのを手伝ってください</div>
+    </div>
+  </div>
+  <div class="bar">
+    <input type=image onclick="" src="img/help1.png" class="help">
+  </div>
+</ons-page>
+
+

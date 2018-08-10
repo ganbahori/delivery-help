@@ -1,0 +1,62 @@
+<ons-page id="fourth-page">
+  </script>
+  <link rel="stylesheet" href="css/edit.css">
+  <script>
+    var currentUser = ncmb.User.getCurrentUser();
+    if (currentUser) {
+      document.getElementById('firstName').value =currentUser.get("firstName");
+      document.getElementById('lastName').value =currentUser.get("lastName");
+      document.getElementById('old').value =currentUser.get("old");
+      document.getElementById('mailAddress').value =currentUser.get("userName");
+      document.getElementById('phoneNumber').value =currentUser.get("phoneNumber");
+    } else {
+      document.getElementById('firstName').value ="abkjnlk";
+      console.log("未ログインまたは取得に失敗");
+    }
+    
+    function imgPreView(event){
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    var preview = document.getElementById("preview");
+    var previewImage = document.getElementById("previewImage");
+    
+    if(previewImage != null)
+      preview.removeChild(previewImage);
+  
+    reader.onload = function(event) {
+      var img = document.createElement("img");
+      img.setAttribute("src", reader.result);
+      img.setAttribute("id", "previewImage");
+      preview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  }
+  </script>
+  <div id="preview" class="iconedit img">
+      <div class="black">
+          <div class="fileform1">
+              <label for="file_photo">
+                <img src ="../www/img/camera7.png">
+                <input type="file" onChange="imgPreView(event)">
+              </label>
+          </div> 
+      </div>    
+  </div>
+  <p id="txt"/>
+  <div class="form1">
+      <input type="text" id="firstName" name="姓" class="formsize" placeholder="姓"/>
+  </div>
+  <div class="form1">
+      <input type="text" id="lastName" name="名" class="formsize"placeholder="名"/>
+  </div>
+  <div class="form1">
+      <input type="text" id="old" name="年齢" class="formsize" placeholder="年齢"/>
+  </div>
+  <div class="form1">
+      <input type="text" name="メールアドレス"id="mailAddress" class="formsize"placeholder="メールアドレス"/>
+  </div>
+  <div class="form1">
+      <input type="text" id="phoneNumber" name="電話番号"class="formsize"placeholder="電話番号"/>
+  </div>
+  <ons-button class="button1" onclick="updateTxt()">編集</ons-button>
+</ons-page>
